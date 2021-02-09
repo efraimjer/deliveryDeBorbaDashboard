@@ -9,9 +9,12 @@ export default function Login(props) {
     const handleSubmit = (e) =>{
         e.preventDefault()
 
-        if(user === "efraim" && senha === "1234"){
+        if(user === "efraim" && senha === "1234" ){
             props.setLoggedIn(true)
 
+        }
+        else if(user === "admin" && senha === "deborba123"){
+            props.setLoggedIn(true)
         }
         else alert("Senha ou usuário Errados")
     }
