@@ -1,5 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7em;
+    
+}
+
+:root{
+    --bg:#dfdfdf;
+    --main: #fff;
+    --second: #404355;
+    --red: #fc4041;
+    --lines: #f0f0f0;
+
+
+}
+
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +57,172 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Dashboard component */
+
+.container{
+  display: flex;
+  width: 90vw;
+  min-height: 100vh;
+  background-color: var(--bg);
+
+}
+
+.side-bar{
+  width: 5vw;
+  background-color: var(--red);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  
+  justify-content: space-evenly;
+  position: fixed;
+}
+
+.sidebar-label{
+  color: white;
+  font-size: 0.7em;
+}
+
+.sidebar-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board{
+  display: flex;
+  flex-direction: column;
+  
+  width: 70vw;
+  min-height: 100vh;
+}
+
+.log-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form-holder{
+  background-color: #f0f0f0;
+  width: 20vw;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.form-holder form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;justify-content: center;
+}
+
+.form-holder form input {
+  margin-bottom: 10px;
+  align-self: center;
+  justify-self: center;
+}
+
+.right-box{
+  width: 30vw;
+  background-color: var(--main);
+  min-height: 100vh;
+}
+
+.sidebar-icon{
+  font-size: 2em;
+  color: white;
+}
+
+/* Orders Component */
+
+.light{
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  
+  
+
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: -25px 0 -25px 0; */
+  min-height: 35px;
+  padding: 0 10px 0 10px;
+  border-radius: 25px;
+}
+
+.flex-row:nth-child(even){
+  background-color: #f0f0f0;
+}
+
+.orders{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.order-box{
+  width: 80%;
+  min-height: 200px;
+  background-color: var(--main);
+  margin: 30px 50px 5px 50px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  
+}
+
+.order-box > p, .order-box > h4{
+  height: 10px;
+}
+
+.cart-item{
+  border-bottom: 1px solid var(--lines);
+}
+
+.btn{
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.btn:disabled{
+  background-color: red;
+  cursor: crosshair;
+}
+
+/* Totals component */
+
+.totals{
+  line-height: 1em;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 0 50px;
+}
+
+.totals h1{
+  margin-top: -20px;
+  font-size: 3em;
 }
