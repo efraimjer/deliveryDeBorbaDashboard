@@ -32,33 +32,7 @@ export default function Orders(props) {
 
     }
 
-    const handlePrint = (order) =>{
-        console.log(
-            `\t\t\tNÃO É DOCUMENTO FISCAL\n
-            ------------------------\n
-            Nº ${order._id.slice(order._id.length - 4, order._id.length)}\n\n
-            ${order.name}\n
-            ${order.adress}\n
-             
-            ${order.cart.map(cart=>(
-                cart.name + "...." +
-                cart.point + ".... R$ " +
-                cart.price.toFixed(2) + "\n\t\t\t"
-            ))}\n\n
-            ------------------------\n
-            R$ ${order.total.toFixed(2)}\n\n
-            deBorba Delivery\n
-            Rua Etc \n
-            Estreito \n
-            Cnpj: 78.809.938/0001-12
-
-            `
-            
-
-
-
-        )
-    }
+    
 
     const handleOrderDelete = (order) =>{
 
@@ -129,7 +103,7 @@ export default function Orders(props) {
                             
                             <p style={{color: "red"}}><em> {cart.point}</em></p>
                             </div>
-                            <p>R$ {cart.price.toFixed(2)}</p>
+                            <p>R$ {cart.subTotal.toFixed(2)}</p>
                         </div>
 
                     ))}
