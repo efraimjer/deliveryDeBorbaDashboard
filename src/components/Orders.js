@@ -18,7 +18,7 @@ export default function Orders(props) {
         setTimeout(() => {
             axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
             .then(res=>setOrders(res.data.sort()));
-        }, 45000);
+        }, 5000);
 
         
     })
