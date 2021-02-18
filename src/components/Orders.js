@@ -10,7 +10,16 @@ export default function Orders(props) {
 
     useEffect(()=>{
         axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
+        .then(res=>setOrders(res.data.sort()));
+
+    },[])
+
+    useEffect(()=>{
+        setTimeout(() => {
+            axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
             .then(res=>setOrders(res.data.sort()));
+        }, 45000);
+
         
     })
 
@@ -93,7 +102,7 @@ export default function Orders(props) {
                     <p><em>{order.adress}, {order.neighborhood} -- {order.option}</em></p>
                     {order.cart.map(cart=>(
                         <div className="flex-row">
-                            <p>{cart.quantity+ 'x'} {'cód' + cart.code} {cart.name}</p>
+                            <p>{cart.quantity+ 'x'} {'cód ' + cart.code} {cart.name}</p>
                             <div className="flex-column">
                             {cart.extrasCart.map(extra=>(
                                 
