@@ -39,10 +39,12 @@ export default function Products() {
 
         <div className="container-product" style={{paddingLeft: '150px', paddingRight: '50px'}}>
             <h3>Produtos</h3>
-            <Sushi 
+
+            <h1>Em Breve</h1>
+            {/* <Sushi 
                 
             />
-            <Burger />
+            <Burger /> */}
             
         </div>
     )

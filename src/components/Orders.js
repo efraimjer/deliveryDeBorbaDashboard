@@ -93,22 +93,25 @@ export default function Orders(props) {
                     <p><em>{order.adress}, {order.neighborhood} -- {order.option}</em></p>
                     {order.cart.map(cart=>(
                         <div className="flex-row">
-                            <p>{cart.code} {cart.name}</p>
+                            <p>{cart.quantity+ 'x'} {cart.code} {cart.name}</p>
                             <div className="flex-column">
                             {cart.extrasCart.map(extra=>(
                                 
-                                    <p style={{color: 'green', marginBottom: '-20px'}}>{extra.name}</p>
+                                    <p style={{color: 'green', marginBottom: '-20px'}}>{extra.quantity + 'x'} - {extra.name}</p>
                                 
                             ))}
                             
                             <p style={{color: "red"}}><em> {cart.point}</em></p>
                             </div>
-                            <p>R$ {cart.subTotal.toFixed(2)}</p>
+                            <p>R$ {(parseFloat(cart.subTotal) + parseFloat(cart.extrasPrice)).toFixed(2)}</p>
                         </div>
 
                     ))}
 
+                    
+
                     <h3 style={{color: 'darkgreen'}}>R$ {order.total.toFixed(2)}</h3>
+
 
 
                 
