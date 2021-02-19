@@ -97,9 +97,10 @@ export default function Orders(props) {
                         className="btn" >Deletar</button>
                         <a href={wppLink} rel="noreferrer" target="_blank" onClick={()=>handleOutForDeliver(order.phone, order.name)}>Saiu para Entrega</a>
                     </div>
-                    <p>Nº {order._id.slice(order._id.length - 4, order._id.length)}</p>
+                    <p>Nº {order._id.slice(order._id.length - 4, order._id.length)} {order.time}</p>
                     <h4>{order.name} -- {order.phone}</h4>
-                    <p><em>{order.adress}, {order.neighborhood} -- {order.option}</em></p>
+                    <p><em>{order.adress}  {order.neighborhood} -- {order.option}</em></p>
+                    <p style={{color: '#fc4041' }}>{order.cep ?'Cep  '+ order.cep : null}</p>
                     {order.cart.map(cart=>(
                         <div className="flex-row">
                             <p>{cart.quantity+ 'x'} {'cód ' + cart.code} {cart.name}</p>
@@ -111,14 +112,16 @@ export default function Orders(props) {
                             ))}
                             
                             <p style={{color: "red"}}><em> {cart.point}</em></p>
+                            <p><em>{cart.observation}</em></p>
                             </div>
+                            
                             <p>R$ {(parseFloat(cart.subTotal) + parseFloat(cart.extrasPrice)).toFixed(2)}</p>
                         </div>
 
                     ))}
 
                     
-
+                    <p>{ order.frete ? 'Frete - R$ ' + order.frete.toFixed(2) : null}</p>                   
                     <h3 style={{color: 'darkgreen'}}>R$ {order.total.toFixed(2)}</h3>
 
 
