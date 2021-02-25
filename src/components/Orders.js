@@ -7,6 +7,7 @@ export default function Orders(props) {
     let btnRef = useRef();
     const[orders, setOrders] = useState([])
     const[wppLink, setWppLink] = useState('')
+    const[ready, setReady] = useState(false)
 
     useEffect(()=>{
         axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
@@ -18,7 +19,7 @@ export default function Orders(props) {
         setTimeout(() => {
             axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
             .then(res=>setOrders(res.data.sort()));
-        }, 5000);
+        }, 30000);
 
         
     })
@@ -45,8 +46,13 @@ export default function Orders(props) {
 
     const handleOrderDelete = (order) =>{
 
+
+
         axios.post('https://delivery-deborba.herokuapp.com/delivery/deleteOrder/'+order._id)
         .then(res=> console.log(res))
+
+
+        
 
     }
 
@@ -86,7 +92,7 @@ export default function Orders(props) {
     return (
         <div className="orders" style={{paddingLeft: '100px'}}>
             {orders.map(order=>(
-                <div className="order-box">
+                <div className="order-box" style={{backgroundColor: order.onRoute ? 'lightgreen' : 'white' }} >
                     
 
                     <div className="flex-row" style={{justifyContent: "space-around"}}>
@@ -94,10 +100,10 @@ export default function Orders(props) {
                         <div className="light"></div>                        
                         <button ref={btnRef} 
                         onClick={()=>handleOrderDelete(order)}
-                        className="btn" >Deletar</button>
+                        className="btn" >{order.onRoute ?'Pronto!' : 'Pronto?'}</button>
                         <a href={wppLink} rel="noreferrer" target="_blank" onClick={()=>handleOutForDeliver(order.phone, order.name)}>Saiu para Entrega</a>
                     </div>
-                    <p>Nº {order._id.slice(order._id.length - 4, order._id.length)} {order.time}</p>
+                    <p >Nº {order._id.slice(order._id.length - 4, order._id.length)} {order.time}</p>
                     <h4>{order.name} -- {order.phone}</h4>
                     <p><em>{order.adress}  {order.neighborhood} -- {order.option}</em></p>
                     <p style={{color: '#fc4041' }}>{order.cep ?'Cep  '+ order.cep : null}</p>

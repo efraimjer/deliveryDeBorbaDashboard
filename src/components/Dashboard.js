@@ -31,10 +31,11 @@ export default function Dashboard() {
     return (
     <div className="App">
       <Router>
+        <Switch>
           <div className="container">
             <div className="side-bar">
 
-              <Link to="/pedidos">
+              <Link to="/">
                 <div className="sidebar-box">
                   <FaCashRegister className="sidebar-icon" />
                   <p className="sidebar-label">Pedidos</p>
@@ -59,7 +60,7 @@ export default function Dashboard() {
 
             </div>
             <div className="board">
-              <Route path="/pedidos">
+              <Route path="/">
                 <Orders
                 setDayTotal={setDayTotal}
                 dayTotal={dayTotal}
@@ -80,6 +81,7 @@ export default function Dashboard() {
                 
             </div>            
           </div>
+          </Switch>
         </Router>
       </div>
     )
