@@ -3,6 +3,7 @@ import '../App.css';
 import Orders from './Orders';
 import Totals from './Totals'
 import Products from './Products'
+import Archive from './Archive'
 
 import {
   BrowserRouter as Router,
@@ -35,7 +36,7 @@ export default function Dashboard() {
           <div className="container">
             <div className="side-bar">
 
-              <Link to="/">
+              <Link to="/pedidos">
                 <div className="sidebar-box">
                   <FaCashRegister className="sidebar-icon" />
                   <p className="sidebar-label">Pedidos</p>
@@ -52,7 +53,7 @@ export default function Dashboard() {
               <Link to="/fechar">
                 <div className="sidebar-box">
                   <FaMoneyCheckAlt className="sidebar-icon" />
-                  <p className="sidebar-label">Fechar</p>
+                  <p className="sidebar-label">Arquivo</p>
                 </div>
               </Link>
 
@@ -60,7 +61,7 @@ export default function Dashboard() {
 
             </div>
             <div className="board">
-              <Route path="/">
+              <Route path="/pedidos">
                 <Orders
                 setDayTotal={setDayTotal}
                 dayTotal={dayTotal}
@@ -70,6 +71,10 @@ export default function Dashboard() {
 
               <Route path="/estoque">
                 <Products />
+              </Route>
+
+              <Route path="/fechar">
+                <Archive />
               </Route>
 
             </div>
