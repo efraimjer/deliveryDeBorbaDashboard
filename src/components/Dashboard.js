@@ -78,13 +78,13 @@ export default function Dashboard() {
               </Route>
 
             </div>
-            <div className="right-box">
+            {/* <div className="right-box">
                 <Totals 
                 dayTotal={dayTotal}
                 counted={counted}
                 />
                 
-            </div>            
+            </div>             */}
           </div>
           </Switch>
         </Router>

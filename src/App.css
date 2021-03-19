@@ -70,7 +70,7 @@
 }
 
 .side-bar{
-  width: 5vw;
+  width: 15vw;
   background-color: var(--red);
   height: 100vh;
   display: flex;
@@ -78,19 +78,27 @@
   align-items: center;
   padding-top: 20px;
   
-  justify-content: space-evenly;
+  justify-content: flex-start;
   position: fixed;
+}
+
+.side-bar Link{
+  text-decoration: none;
 }
 
 .sidebar-label{
   color: white;
-  font-size: 0.7em;
+  font-size: 1em;
+  text-decoration: none;
+  margin-left: 20px;
+  outline: none;
 }
 
 .sidebar-box{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  
 }
 
 .board{
@@ -181,7 +189,7 @@
   width: 90%;
   min-height: 200px;
   background-color: var(--main);
-  margin: 30px 20px 5px 50px;
+  margin: 30px 20px 5px 120px;
   border-radius: 10px;
   padding: 10px 20px 10px 20px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.1);

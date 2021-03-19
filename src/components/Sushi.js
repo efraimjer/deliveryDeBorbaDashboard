@@ -8,7 +8,7 @@ export default function Sushi() {
     useEffect(()=>{
 
         axios.get('https://delivery-deborba.herokuapp.com/delivery/sushi')
-            .then(res=> {setSushi(res.data)})
+            .then(res=> {setSushi(res.data.sort((a, b) => (a.code > b.code) ? 1 : -1))})
 
     })
 
@@ -30,7 +30,7 @@ export default function Sushi() {
         }
         
         if(product.isAvailable){
-            axios.post('https://delivery-deborba.herokuapp.com/delivery/updateSushi/' + product._id, {isAvailable: false})
+            axios.post('https://delivery-deborba.herokuapp.com/delivery/sushiUnavailable/' + product._id)
                 .then(res=> console.log(res))
         }
     }
@@ -44,7 +44,7 @@ export default function Sushi() {
 
 
         if(!product.isAvailable){
-            axios.post('https://delivery-deborba.herokuapp.com/delivery/updateSushi/' + product._id, Available)
+            axios.post('https://delivery-deborba.herokuapp.com/delivery/sushiAvailable/' + product._id)
                 .then(res=> console.log(res))
         }
     }

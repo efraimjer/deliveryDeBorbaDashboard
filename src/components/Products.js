@@ -9,21 +9,7 @@ export default function Products() {
 
 
     useEffect(()=>{
-        // axios.get('http://localhost:4000/delivery/sushi')
-        //     .then(res=> {setSushi(res.data)})
 
-        // axios.get('http://localhost:4000/delivery/burger')
-        //     .then(res=> {setBurger(res.data)});
-
-        // axios.get('http://localhost:4000/delivery/entries')
-        //     .then(setEntries(res=> res.data));
-
-        // axios.get('http://localhost:4000/delivery/stakes')
-        //     .then(setSteaks(res=> res.data));
-
-        // axios.get('http://localhost:4000/delivery/drinks')
-        //     .then(setDrinks(res=> res.data));
-            
 
     })
 
@@ -40,11 +26,9 @@ export default function Products() {
         <div className="container-product" style={{paddingLeft: '150px', paddingRight: '50px'}}>
             <h3>Produtos</h3>
 
-            <h1>Em Breve</h1>
-            {/* <Sushi 
-                
-            />
-            <Burger /> */}
+            
+            <Sushi />
+            <Burger />
             
         </div>
     )

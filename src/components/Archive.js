@@ -11,7 +11,7 @@ export default function Archive() {
 
     useEffect(()=>{
         axios.get('https://delivery-deborba.herokuapp.com/delivery/getOrder')
-        .then(res=>setOrders(res.data.sort((a, b) => (a.time < b.time) ? 1 : -1)));
+        .then(res=>setOrders(res.data));
 
     },[])
 
