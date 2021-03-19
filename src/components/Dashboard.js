@@ -46,7 +46,7 @@ export default function Dashboard() {
               <Link to="/estoque">
                 <div className="sidebar-box">
                   <FaBoxes className="sidebar-icon" />
-                  <p className="sidebar-label">Estoque</p>
+                  <p className="sidebar-label">Produtos</p>
                 </div>
               </Link>
 

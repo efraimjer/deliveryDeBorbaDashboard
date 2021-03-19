@@ -3,6 +3,9 @@ import axios from 'axios';
 
 import Sushi from './Sushi';
 import Burger from './Burger';
+import Steaks from './Steaks'
+import Drinks from './Drinks'
+import Entries from './Entries'
 import './products.css'
 
 export default function Products() {
@@ -26,10 +29,11 @@ export default function Products() {
         <div className="container-product" style={{paddingLeft: '150px', paddingRight: '50px'}}>
             <h3>Produtos</h3>
 
-            
+            <Entries />
             <Sushi />
             <Burger />
-            
+            <Steaks />
+            <Drinks />
         </div>
     )
 }

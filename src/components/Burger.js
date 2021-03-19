@@ -13,21 +13,7 @@ export default function Burger() {
     })
 
     const handleAvailability = (product) =>{
-        console.log(product)
 
-        var Available = {
-            code: product.code,
-            name: product.name,
-            short: product.short,
-            long: product.long,
-            photo: product.photo,
-            pontuation: product.pontuation,
-            price: product.price,
-            isAvailable: false,
-            table: product.table,
-            mode: product.mode,
-            group: product.group
-        }
         
         if(product.isAvailable){
             axios.post('https://delivery-deborba.herokuapp.com/delivery/burgerUnavailable/' + product._id)
@@ -36,12 +22,6 @@ export default function Burger() {
     }
 
     const handleNotAvailability = (product) =>{
-        console.log(product)
-
-        var Available ={
-            isAvailable: true
-        }
-
 
         if(!product.isAvailable){
             axios.post('https://delivery-deborba.herokuapp.com/delivery/burgerAvailable/' + product._id)
