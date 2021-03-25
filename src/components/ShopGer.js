@@ -11,7 +11,7 @@ export default function ShopGer(props) {
         axios.get('https://delivery-deborba.herokuapp.com/delivery/shop')
             .then(res=>{setShop(res.data)})
 
-    },)
+    },[])
 
     const shopGer = {
         display: 'flex',
@@ -38,6 +38,8 @@ export default function ShopGer(props) {
         setHandleCloseShop(false)
 
         alert('Sua Loja está Fechada!')
+
+        props.setShowModal(false)
     }
 
 
@@ -51,6 +53,8 @@ export default function ShopGer(props) {
             .then(res => console.log(res))
 
             alert('Sua Loja está Aberta!')
+
+            props.setShowModal(false)
         }
     }
     return (
