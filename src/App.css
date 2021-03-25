@@ -98,6 +98,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
   
 }
 
@@ -218,6 +219,31 @@
   cursor: crosshair;
 }
 
+.shop-btn{
+  background-color: white;
+  color: var(--red);
+  
+  border: none;
+  outline: none;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}
+
+
+
+a, Link{
+  text-decoration: none;
+
+}
+
+Link p{
+  text-decoration: none;
+}
+
+.shop-btn p{
+  color: #fc4041;
+}
+
 /* Totals component */
 
 .totals{
@@ -234,4 +260,40 @@
 .totals h1{
   margin-top: -20px;
   font-size: 3em;
+}
+
+.modal{
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box{
+  width: 400px;
+  height: 400px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box > p{
+  position: absolute;
+  top: 120px;
+  cursor: pointer;
+}
+
+.modal-box > p:hover{
+  color: #fc4041;
+}
+
+button:hover{
+  background-color: #e0e0e0;
 }

@@ -4,6 +4,7 @@ import Orders from './Orders';
 import Totals from './Totals'
 import Products from './Products'
 import Archive from './Archive'
+import Shop from './ShopGer'
 
 import {
   BrowserRouter as Router,
@@ -18,11 +19,13 @@ import {
 
 
 import {FaCashRegister, FaBoxes, FaMoneyCheckAlt} from 'react-icons/fa'
+import{AiOutlineShop,AiFillShop} from 'react-icons/ai'
 
 export default function Dashboard() {
 
     const[dayTotal, setDayTotal] = useState(0);
     const[counted, setCounted] =useState([])
+    const[showModal, setShowModal] = useState(false)
 
     
 
@@ -57,6 +60,13 @@ export default function Dashboard() {
                 </div>
               </Link>
 
+              
+                <div className="sidebar-box" onClick={()=>setShowModal(true)}>
+                  <AiFillShop className="sidebar-icon" />
+                  <p className="sidebar-label">Gerenciar <br></br>Loja</p>
+                </div>
+              
+
 
 
             </div>
@@ -88,6 +98,15 @@ export default function Dashboard() {
           </div>
           </Switch>
         </Router>
+
+        <div style={{display: showModal ? 'flex' : 'none'}} className="modal">
+          <div className="modal-box">
+            <p onClick={()=>setShowModal(false)}>x fechar</p>
+            <Shop 
+            setShowModal = {setShowModal}
+            />
+          </div>
+        </div>
       </div>
     )
 }
