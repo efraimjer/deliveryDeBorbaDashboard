@@ -37,6 +37,7 @@ export default function Archive() {
                     <p >Nº {order._id.slice(order._id.length - 4, order._id.length)} {order.time}</p>
                     <h4>{order.name} -- {order.phone}</h4>
                     <p><em>{order.adress}  {order.neighborhood} -- {order.option}</em></p>
+                    <br></br>
                     <p style={{color: '#fc4041' }}>{order.cep ?'Cep  '+ order.cep : null}</p>
                     {order.cart.map(cart=>(
                         <div className="flex-row">
